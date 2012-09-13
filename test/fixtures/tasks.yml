@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  key: MyString
+  name: MyString
+  description: MyText
+  priority: 1
+  deadline: 2012-09-13
+  status: MyString
+
+two:
+  key: MyString
+  name: MyString
+  description: MyText
+  priority: 1
+  deadline: 2012-09-13
+  status: MyString
