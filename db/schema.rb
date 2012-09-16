@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913082214) do
+ActiveRecord::Schema.define(:version => 20120913082630) do
 
   create_table "tasks", :force => true do |t|
-    t.text     "key"
-    t.text     "name"
+    t.string   "key"
+    t.string   "name"
     t.text     "description"
-    t.text     "priority"
+    t.integer  "priority"
     t.date     "deadline"
-    t.text     "status"
+    t.string   "status"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

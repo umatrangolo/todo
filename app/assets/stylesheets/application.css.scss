@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.main {
+    background-color: rgb(255, 255, 255);
+}
+
+#tasks-header {
+    background-color: rgb(224, 224, 224);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 60px;
+
+    img {
+        padding-top: 10px;
+    }
+
+    h1 {
+        position: absolute;
+        left: 75px;
+        top: 0px;
+        font-family: 'open sans', arial, sans-serif;
+        font-size: 38px;    
+    }
+}
+
+#tasks-navbar {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+    top: 60px;
+    background-color: rgb(68, 68, 68);
+
+    ul {
+        list-style-image: none;
+        list-style-type: none;
+
+        li {
+
+            a {
+                background-color: rgba(0,0,0,0);
+                float: left;
+                text-align: left;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: normal;
+                color: white;
+                padding-right: 44px;
+            }
+        }
+    }
+}
+
+#tasks-list {
+    background-color: rgb(255, 255, 255);;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 100px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Inconsolata', sans-serif;
+    cellspacing: none;
+    border-collapse: collapse;
+    border: none;
+
+    th {
+        text-align: left;
+        font-size: 14px;
+        padding-right: 44px;
+    }
+
+    tr {
+        font-size: 14px;
+        padding-right: 44px;
+    }
+}
