@@ -1,0 +1,17 @@
+<div>
+  <tr>
+    <td>
+      <div class="tasks-list-item-buttons">
+        <%= button_to 'Remove', task_path(:id => task.id), { :method => :delete }  %>
+        <% if task_status == :InProgress %>
+          <%= button_to 'Done', task_path(:id => task.id, :new_status => :Done), { :method => :put } %>
+        <% end %>
+        <% if task_status == :Open %>
+          <%= button_to 'Start', task_path(:id => task.id, :new_status => :InProgress), { :method => :put } %>
+        <% end %>
+      </div>
+    </td>
+    <td class="tasks-list-section-row-priority"><%= task.priority %></td>
+    <td class="tasks-list-section-row-description"><%= task.description %></td>
+  </tr>
+</div>

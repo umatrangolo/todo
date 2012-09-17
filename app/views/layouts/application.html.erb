@@ -8,8 +8,14 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu|Inconsolata|Quattrocento+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Permanent+Marker|Short+Stack|Neucha|Schoolbell|Handlee|Delius|Rock+Salt|Architects+Daughter' rel='stylesheet' type='text/css'>
 </head>
 <body class = "main">
+
+<% if notice %>
+  <p id="notice"><%= notice %></p> 
+<% end %>
+
 <%= yield %>
 
 </body>

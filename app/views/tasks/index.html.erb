@@ -5,17 +5,19 @@
 </div>
 
 <div id = "tasks-list">
-  <table>
 
-    <% @tasks.each do |task| %>
-    <tr class = "tasks-list-item">
-      <td><%= button_to 'Remove', task_path(:id => task.id), :method => :delete %></td>
-      <td/>
-      <td><%= task.priority %></td>
-      <td><%= task.status %></td>
-      <td><%= task.deadline %></td>
-      <td><%= task.description %></td>
-    </tr>
-    <% end %>
+  <h3 class="tasks-list-header">In Progress</h3>
+  <table class="tasks-list-section">
+    <%= render @in_progress_tasks, :task_status => :InProgress %>
+  </table>
+ 
+  <h3 class="tasks-list-header">Open</h3>
+  <table class="tasks-list-section">
+    <%= render @open_tasks, :task_status => :Open %>
+  </table>
+
+  <h3 class="tasks-list-header">Done</h3>
+  <table class="tasks-list-section">
+    <%= render @done_tasks, :task_status => :Done %>
   </table>
 </div>

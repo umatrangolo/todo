@@ -2,7 +2,9 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @open_tasks = Task.find_all_by_status('Open')
+    @in_progress_tasks = Task.find_all_by_status('InProgress')
+    @done_tasks = Task.find_all_by_status('Done')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,18 +15,23 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    @task = Task.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @task }
+    begin
+      @task = Task.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      logger.error "Attempt to access invalid Task #{params[:id]}"
+      redirect_to :action => "index", :status => 404, notice: 'Task not found!'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @task }
+      end
     end
   end
 
   # GET /tasks/new
   # GET /tasks/new.json
   def new
-    @task = Task.new
+    @task = Task.new(:status => :Open)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -56,15 +63,21 @@ class TasksController < ApplicationController
   # PUT /tasks/1
   # PUT /tasks/1.json
   def update
-    @task = Task.find(params[:id])
-
-    respond_to do |format|
-      if @task.update_attributes(params[:task])
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+    begin
+      @task = Task.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      logger.error "Attempt to access invalid Task #{params[:id]}"
+      redirect_to tasks_url
+    else
+      @task.status = params[:new_status]
+      respond_to do |format|
+        if @task.update_attributes(params[:task])
+          format.html { redirect_to tasks_url }
+          format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @task.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
