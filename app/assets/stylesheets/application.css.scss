@@ -16,33 +16,12 @@
     background-color: rgb(255, 255, 255);
 }
 
-#tasks-header {
-    background-color: rgb(224, 224, 224);
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    height: 60px;
-
-    img {
-        padding-top: 10px;
-    }
-
-    h1 {
-        position: absolute;
-        left: 75px;
-        top: 0px;
-        font-family: 'open sans', arial, sans-serif;
-        font-size: 38px;    
-    }
-}
-
 #tasks-navbar {
     position: absolute;
     left: 0px;
     right: 0px;
     height: 40px;
-    top: 60px;
+    top: 0px;
     background-color: rgb(68, 68, 68);
 
     ul {
@@ -66,27 +45,27 @@
 }
 
 #tasks-list {
+    font-family: 'Quattrocento Sans', sans-serif;
     background-color: rgb(255, 255, 255);;
     position: absolute;
     left: 0px;
     right: 0px;
-    top: 100px;
+    top: 50px;
     padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-family: 'Inconsolata', sans-serif;
+    padding-left: 35px;
+    padding-right: 35px;
     cellspacing: none;
     border-collapse: collapse;
     border: none;
+    text-align: left;
+}
 
-    th {
-        text-align: left;
-        font-size: 14px;
-        padding-right: 44px;
-    }
+.tasks-list-item {
+    padding-left: 44px;
+    font-size: 12px;
+    padding-right: 44px;
 
-    tr {
-        font-size: 14px;
-        padding-right: 44px;
+    td {
+        font-family: 'Quattrocento Sans', sans-serif;
     }
 }

@@ -1,24 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  key: task-01
-  name: Task One
   description: This is Task One
   priority: 1
   deadline: 2012-09-13
   status: OPEN
 
 two:
-  key: task-2
-  name: TAsk Two
   description: This is Task Two
   priority: 4
   deadline: 2012-09-15
   status: INPROGRESS
 
 three:
-  key: task-3
-  name: TAsk Three
   description: This is Task Threee
   priority: 2
   deadline: 2012-09-12

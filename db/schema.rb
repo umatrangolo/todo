@@ -11,11 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913082630) do
+ActiveRecord::Schema.define(:version => 20120916220713) do
 
   create_table "tasks", :force => true do |t|
-    t.string   "key"
-    t.string   "name"
     t.text     "description"
     t.integer  "priority"
     t.date     "deadline"
@@ -23,7 +21,5 @@ ActiveRecord::Schema.define(:version => 20120913082630) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
-
-  add_index "tasks", ["key"], :name => "index_tasks_on_key", :unique => true
 
 end

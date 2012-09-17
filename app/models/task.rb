@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :deadline, :description, :key, :name, :priority, :status
+  attr_accessible :deadline, :description, :priority, :status
 
-  validates :key, :name, :priority, presence: true
+  validates :description, :priority, presence: true
 end
