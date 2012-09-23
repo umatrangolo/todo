@@ -12,8 +12,12 @@
  *= require_tree .
  */
 
+form, div {
+    display: inline;
+}
+
 .main {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(239, 233, 183);
 }
 
 #tasks-navbar {
@@ -46,7 +50,6 @@
 
 #tasks-list {
     font-family: 'Quattrocento Sans', sans-serif;
-    background-color: rgb(255, 255, 255);;
     position: absolute;
     left: 0px;
     right: 0px;
@@ -62,10 +65,43 @@
 
 .tasks-list-item {
     padding-left: 44px;
-    font-size: 12px;
     padding-right: 44px;
 
     td {
-        font-family: 'Quattrocento Sans', sans-serif;
+        font-size: 18px;
+        #font-family: 'Neucha';
     }
+}
+
+.tasks-list-header {
+    background-color: rgb(224, 218, 171);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ 
+.tasks-list-section {
+
+}
+
+.tasks-list-section-row {
+
+}
+
+.tasks-list-section-row-priority {
+    width: 24px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 22px;
+}
+
+.tasks-list-section-row-description {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+}
+
+.tasks-list-item-buttons {
+    margin: 0px, 0px, 0px, 0px;
+    padding: 0px, 0px, 0px, 0px;
+    width: 130px;
+    color: red;
+    float: right;
 }
