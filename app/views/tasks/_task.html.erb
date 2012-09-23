@@ -11,7 +11,21 @@
         <% end %>
       </div>
     </td>
+    <% if task.status != 'Done' %>
+      <% if !task.expiring? and !task.passed? %>
+        <td class="tasks-list-section-row-days-left-good">(+<%= task.days_left %>)</td>
+      <% end %>
+
+      <% if task.expiring? %>
+        <td class="tasks-list-section-row-days-left-expiring">(<%= task.days_left %>)</td>
+      <% end %>
+
+      <% if task.passed? %>
+        <td class="tasks-list-section-row-days-left-passed">(<%= task.days_left %>)</td>
+      <% end %>
     <td class="tasks-list-section-row-priority"><%= task.priority %></td>
+    <% end %>
+
     <td class="tasks-list-section-row-description"><%= task.description %></td>
   </tr>
 </div>
