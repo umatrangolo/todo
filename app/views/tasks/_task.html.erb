@@ -2,6 +2,11 @@
   <tr>
     <td>
       <div class="tasks-list-item-buttons">
+        <%= image_tag("trash.png", :size => "24x24", :alt => "Remove task") %>
+        <%= image_tag("start.png", :size => "24x24", :alt => "Remove task") %>
+        <%= image_tag("done.png", :size => "24x24", :alt => "Remove task") %>
+        <%= image_tag("edit.png", :size => "24x24", :alt => "Remove task") %>
+        <!--
         <%= button_to 'Remove', task_path(:id => task.id), { :method => :delete }  %>
         <%= button_to 'Edit', edit_task_path(task), { :method => :get }  %>
         <% if task_status == :InProgress %>
@@ -10,6 +15,7 @@
         <% if task_status == :Open %>
           <%= button_to 'Start', task_path(:id => task.id, :new_status => :InProgress), { :method => :put } %>
         <% end %>
+        -->
       </div>
     </td>
     <% if task.status != 'Done' %>
