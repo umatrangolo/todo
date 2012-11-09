@@ -137,12 +137,17 @@ form, div {
     position: absolute;
     left: 100px;
     width: 800px;
-
-    .tasks-new-description {
-
-    }
+    float: right;
 
     .tasks-new-controls {
+        margin-left: 32px;
 
+        .tasks-new-deadline {
+            margin-left: 150px;
+        }
+
+        .tasks-new-confirm {
+            margin-left: 175px;
+        }
     }
 }
