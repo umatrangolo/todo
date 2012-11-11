@@ -2,14 +2,31 @@
   <tr>
     <td>
       <div class="tasks-list-item-buttons">
-        <%= button_to 'Remove', task_path(:id => task.id), { :method => :delete }  %>
-        <%= button_to 'Edit', edit_task_path(task), { :method => :get }  %>
+
+        <%= form_for task, :method => :delete do |f| %>
+          <%= image_submit_tag("trash.png", :width => "24", :height => "24") %>
+        <% end %>
+
         <% if task_status == :InProgress %>
-          <%= button_to 'Done', task_path(:id => task.id, :new_status => :Done), { :method => :put } %>
+          <%= form_for task, :method => :get, :url => edit_task_path(:id => task.id) do |f| %>
+            <%= image_submit_tag("edit.png", :width => "24", :height => "24") %>
+          <% end %>
+
+          <%= form_for task, :method => :put, :url => task_path(:id => task.id, :new_status => :Done) do |f| %>
+            <%= image_submit_tag("done.png", :width => "24", :height => "24") %>
+          <% end %>
         <% end %>
+
         <% if task_status == :Open %>
-          <%= button_to 'Start', task_path(:id => task.id, :new_status => :InProgress), { :method => :put } %>
+          <%= form_for task, :method => :get, :url => edit_task_path(:id => task.id) do |f| %>
+            <%= image_submit_tag("edit.png", :width => "24", :height => "24") %>
+          <% end %>
+
+          <%= form_for task, :method => :put, :url => task_path(:id => task.id, :new_status => :InProgress) do |f| %>
+            <%= image_submit_tag("start.png", :width => "24", :height => "24") %>
+          <% end %>
         <% end %>
+
       </div>
     </td>
     <% if task.status != 'Done' %>
