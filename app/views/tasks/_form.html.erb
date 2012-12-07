@@ -25,11 +25,6 @@
         <%= f.number_field :priority, :min => 0, :max => 5, :step => 1 %> <!-- TODO how to get this from the model object ? -->
       </div>
 
-      <div class="tasks-new-deadline">
-        <%= f.label :deadline %>
-        <%= f.date_select :deadline %>
-      </div>
-
       <div class="tasks-new-confirm">
         <%= f.hidden_field :status %>
         <%= f.submit %>
